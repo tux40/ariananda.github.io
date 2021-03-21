@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
             // insert with your SMTP
             $smtp = Mail::factory('smtp', array(
                 'host' => 'ssl://smtp.gmail.com',
-                'port' => '465',
+                'port' => '587',
                 'auth' => true,
                 'username' => 'dhiyaussunnah03',
                 'password' => 'Dhiyaussunnah123'
