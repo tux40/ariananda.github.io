@@ -15,8 +15,7 @@ if(isset($_POST['submit'])){
             $msgClass = 'errordiv';
         }else{
             // Recipient email
-            $toEmail = 'user@example.com';
-            $emailSubject = 'Contact Request Submitted by '.$name;
+            $toEmail = 'aria40nanda@gmail.com';
             $htmlContent = '<h2>Contact Request Submitted</h2>
                 <h4>Name</h4><p>'.$name.'</p>
                 <h4>Email</h4><p>'.$email.'</p>
@@ -28,9 +27,16 @@ if(isset($_POST['submit'])){
             
             // Additional headers
             $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
-            
+            // insert with your SMTP
+            $smtp = Mail::factory('smtp', array(
+                'host' => 'ssl://smtp.gmail.com',
+                'port' => '465',
+                'auth' => true,
+                'username' => 'dhiyaussunnah03',
+                'password' => 'Dhiyaussunnah123'
+            ));
             // Send email
-            if(mail($toEmail,$emailSubject,$htmlContent,$headers)){
+            if(mail($toEmail,$htmlContent,$headers)){
                 $statusMsg = 'Your contact request has been submitted successfully !';
                 $msgClass = 'succdiv';
             }else{
