@@ -8,3 +8,8 @@
 section {
   padding-top: 6rem;
 }
+
+.about hr {
+  width: 250px;
+  border-top: 6px solid #666;
+}
